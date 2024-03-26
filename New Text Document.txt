@@ -1,0 +1,3 @@
+Poetry env info —path-----> for virtual env
+
+poetry shell  --------> for virtual env activated
