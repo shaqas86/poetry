@@ -18,14 +18,14 @@ COPY . /code/
 
 # Configuration to avoid creating virtual environments inside the Docker container
 #RUN poetry config virtualenvs.create false
-RUN poetry config virtualenvs.create false \
-    && poetry install --no-interaction --no-root
+RUN poetry config virtualenvs.create false
+
 
 # Install dependencies including development ones
-#RUN poetry install
+RUN poetry install
 
 # Make port 8000 available to the world outside this container
-#EXPOSE 8000
+EXPOSE 8000
 
 # Run the app. CMD can be overridden when starting the container
-CMD ["poetry", "run", "uvicorn", "todo_api.main:app", "--host", "0.0.0.0", "--reload"]
+CMD ["poetry", "run", "uvicorn", "todo_server.main:app", "--host", "0.0.0.0", "--reload"]
